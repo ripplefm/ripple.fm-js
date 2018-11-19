@@ -1,0 +1,12 @@
+{
+  "name": "ripple.fm",
+  "version": "0.1.0",
+  "description": "Javascript client library for ripple.fm API",
+  "main": "index.js",
+  "repository": "https://github.com/ripplefm/ripple.fm-js",
+  "author": "Daniel Rudnitski",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.15.2"
+  }
+}
