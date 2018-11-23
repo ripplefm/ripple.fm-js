@@ -2,11 +2,21 @@
   "name": "ripple.fm",
   "version": "0.1.0",
   "description": "Javascript client library for ripple.fm API",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": "https://github.com/ripplefm/ripple.fm-js",
   "author": "Daniel Rudnitski",
   "license": "MIT",
+  "scripts": {
+    "build": "babel lib -d dist"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
     "prettier": "^1.15.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "axios": "^0.18.0"
   }
 }
