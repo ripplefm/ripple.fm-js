@@ -1442,6 +1442,10 @@ path-parse@^1.0.5:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/path-parse/-/path-parse-1.0.6.tgz#d62dbb5679405d72c4737ec58600e9ddcf06d24c"
 
+phoenix@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/phoenix/-/phoenix-1.4.0.tgz#9cec8dbd8cbc59ecd2147bc09ca8ceb56b860d75"
+
 posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"

@@ -15,7 +15,7 @@ function _default(api, _ref) {
   var authURL = _ref.authURL;
   return {
     getCurrentUser: function getCurrentUser() {
-      (0, _wrap.default)(api.get("".concat(authURL, "/api/users/me")));
+      return (0, _wrap.default)(api.get("".concat(authURL, "/api/users/me")));
     }
   };
 }

@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
+var _phoenix = require("phoenix");
+
 var _wrap = _interopRequireDefault(require("../utils/wrap"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -25,11 +27,11 @@ function _default(api) {
       return (0, _wrap.default)(api.get("/stations/".concat(slug)));
     },
     createStation: function createStation(name, tags) {
-      var playType = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'public';
+      var visibility = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'public';
       return (0, _wrap.default)(api.post('/stations', {
         station: {
           name: name,
-          play_type: playType,
+          visibility: visibility,
           tags: tags
         }
       }));
@@ -39,6 +41,41 @@ function _default(api) {
     },
     unfollowStation: function unfollowStation(slug) {
       return (0, _wrap.default)(api.delete("/stations/".concat(slug, "/followers")));
+    },
+    joinStation: function joinStation(slug) {
+      var _api$defaults = api.defaults,
+          baseURL = _api$defaults.baseURL,
+          headers = _api$defaults.headers;
+      var socket;
+
+      if (headers.Authorization) {
+        socket = new _phoenix.Socket(baseURL.replace('http', 'ws') + '/socket', {
+          params: {
+            token: headers.Authorization.substring('Bearer '.length)
+          }
+        });
+      } else {
+        socket = new _phoenix.Socket(baseURL.replace('http', 'ws') + '/socket');
+      }
+
+      socket.connect();
+      var channel = socket.channel("stations:".concat(slug));
+      return new Promise(function (resolve, reject) {
+        channel.join().receive('ok', function () {
+          return resolve({
+            on: channel.on.bind(channel),
+            push: channel.push.bind(channel),
+            leave: function leave() {
+              return channel.leave;
+            },
+            channel: channel,
+            socket: socket
+          });
+        }).receive('error', function (_ref) {
+          var reason = _ref.reason;
+          return reject(reason);
+        });
+      });
     }
   };
 }
