@@ -12,8 +12,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _default(api, _ref) {
   var authURL = _ref.authURL;
   return {
-    getCurrentUser: function getCurrentUser() {
-      return (0, _wrap.default)(api.get("".concat(authURL, "/api/users/me")));
+    getClient: function getClient(name) {
+      return (0, _wrap.default)(api.get("".concat(authURL, "/api/oauth2/clients/").concat(name)));
     }
   };
 }
