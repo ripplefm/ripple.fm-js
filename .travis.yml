@@ -1,11 +1,13 @@
 language: node_js
-node_js: '10
+node_js: '10'
 
 before_script: npm install
 
 script: ./ci/run.sh
 
 deploy:
-    provider: npm
-    email: "danielrudn@gmail.com"
-    api_key: $NPM_TOKEN
+  provider: npm
+  email: 'danielrudn@gmail.com'
+  api_key: $NPM_TOKEN
+  on:
+    tags: true
