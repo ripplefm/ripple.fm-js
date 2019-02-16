@@ -1,0 +1,5 @@
+.babelrc
+.prettierrc
+.travis.yml
+lib/*
+ci/*

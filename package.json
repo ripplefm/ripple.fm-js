@@ -7,7 +7,8 @@
   "author": "Daniel Rudnitski",
   "license": "MIT",
   "scripts": {
-    "build": "babel lib -d dist"
+    "build": "babel lib -d dist",
+    "lint": "prettier --debug-check \"lib/**/*.js\""
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
