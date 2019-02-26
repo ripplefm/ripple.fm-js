@@ -38,6 +38,6 @@ async function() {
 }
 ```
 
-### Refresh Implementation example
+### onAccessTokenExpire Implementation Example
 
 An example of the configuration and refreshing access tokens in production is available [here.](https://github.com/ripplefm/web/blob/master/src/js/services/ripple-api.js)
