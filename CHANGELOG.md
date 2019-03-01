@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3] - 2019-03-01
+
+### Fixed
+
+- Endpoints added from `0.1.2` were not present in package
+
 ## [0.1.2] - 2019-02-26
 
 ### Added
