@@ -18,22 +18,22 @@ function _default(api) {
         visibility: visibility
       }));
     },
-    deletePlaylist: function deletePlaylist(playlistId) {
-      return (0, _wrap.default)(api.delete("/playlists/".concat(playlistId)));
+    deletePlaylist: function deletePlaylist(slug) {
+      return (0, _wrap.default)(api.delete("/playlists/".concat(slug)));
     },
-    addTrackToPlaylist: function addTrackToPlaylist(playlistId, url) {
-      return (0, _wrap.default)(api.post("/playlists/".concat(playlistId), {
+    addTrackToPlaylist: function addTrackToPlaylist(slug, url) {
+      return (0, _wrap.default)(api.post("/playlists/".concat(slug), {
         url: url
       }));
     },
-    deleteTrackFromPlaylist: function deleteTrackFromPlaylist(playlistId, trackId) {
-      return (0, _wrap.default)(api.delete("/playlists/".concat(playlistId, "/").concat(trackId)));
+    deleteTrackFromPlaylist: function deleteTrackFromPlaylist(slug, trackId) {
+      return (0, _wrap.default)(api.delete("/playlists/".concat(slug, "/").concat(trackId)));
     },
-    followPlaylist: function followPlaylist(playlistId) {
-      return (0, _wrap.default)(api.post("/playlists/".concat(playlistId, "/followers")));
+    followPlaylist: function followPlaylist(slug) {
+      return (0, _wrap.default)(api.post("/playlists/".concat(slug, "/followers")));
     },
-    unfollowPlaylist: function unfollowPlaylist(playlistId) {
-      return (0, _wrap.default)(api.delete("/playlists/".concat(playlistId, "/followers")));
+    unfollowPlaylist: function unfollowPlaylist(slug) {
+      return (0, _wrap.default)(api.delete("/playlists/".concat(slug, "/followers")));
     }
   };
 }

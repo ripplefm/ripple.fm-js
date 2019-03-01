@@ -13,6 +13,8 @@ var _stations = _interopRequireDefault(require("./stations"));
 
 var _playlists = _interopRequireDefault(require("./playlists"));
 
+var _me = _interopRequireDefault(require("./me"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _default(api, config) {
@@ -21,5 +23,6 @@ function _default(api, config) {
   Object.assign(endpoints, (0, _users.default)(api, config));
   Object.assign(endpoints, (0, _stations.default)(api));
   Object.assign(endpoints, (0, _playlists.default)(api));
+  Object.assign(endpoints, (0, _me.default)(api));
   return endpoints;
 }
