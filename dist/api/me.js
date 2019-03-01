@@ -22,6 +22,9 @@ function _default(api) {
     },
     getFollowedPlaylists: function getFollowedPlaylists() {
       return (0, _wrap.default)(api.get('/me/playlists/following'));
+    },
+    isFollowingStation: function isFollowingStation(slug) {
+      return (0, _wrap.default)(api.get("/me/stations/".concat(slug, "/following")));
     }
   };
 }
