@@ -1,15 +1,29 @@
 "use strict";
 
+require("core-js/modules/es6.object.define-property");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = _default;
 
-var _phoenix = require("phoenix");
+require("core-js/modules/es6.function.bind");
+
+require("core-js/modules/es6.promise");
+
+require("core-js/modules/es6.regexp.replace");
 
 var _wrap = _interopRequireDefault(require("../utils/wrap"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Socket;
+
+if (typeof window === 'undefined') {
+  Socket = require('phoenix-channels');
+} else {
+  Socket = require('phoenix');
+}
 
 function _default(api) {
   return {
@@ -49,13 +63,13 @@ function _default(api) {
       var socket;
 
       if (headers.Authorization) {
-        socket = new _phoenix.Socket(baseURL.replace('http', 'ws') + '/socket', {
+        socket = new Socket(baseURL.replace('http', 'ws') + '/socket', {
           params: {
             token: headers.Authorization.substring('Bearer '.length)
           }
         });
       } else {
-        socket = new _phoenix.Socket(baseURL.replace('http', 'ws') + '/socket');
+        socket = new Socket(baseURL.replace('http', 'ws') + '/socket');
       }
 
       socket.connect();

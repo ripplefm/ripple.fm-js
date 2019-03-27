@@ -19,6 +19,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "axios": "^0.18.0",
-    "phoenix": "^1.4.0"
+    "phoenix": "^1.4.0",
+    "phoenix-channels": "^1.0.0"
   }
 }
