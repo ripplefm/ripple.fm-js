@@ -7,7 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.4] - 2019-03-1
+## [0.2.0] - 2019-03-27
+
+### Added
+
+- Client is now isomorphic an can run on browser and server without configuration changes
+
+### Changed
+
+- Babel polyfill only imports what is required with the `useBuiltIns` settings
+
+## [0.1.4] - 2019-03-01
 
 ### Added
 
