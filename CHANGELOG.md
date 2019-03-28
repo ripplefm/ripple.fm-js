@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.5] - 2019-03-27
+
+### Fixed
+
+- Errors that cannot be fixed by refresh-retry middleware are actually thrown instead of crashing now
+
 ## [0.2.4] - 2019-03-27
 
 ### Changed
