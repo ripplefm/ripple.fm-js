@@ -28,6 +28,8 @@ function _default(onExpire, api) {
         }).catch(function (_) {
           return reject(err);
         });
+      } else {
+        reject(err);
       }
     });
   };
