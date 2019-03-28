@@ -1,6 +1,6 @@
 {
   "name": "ripple.fm",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Javascript client library for ripple.fm API",
   "main": "dist/index.js",
   "repository": "https://github.com/ripplefm/ripple.fm-js",
