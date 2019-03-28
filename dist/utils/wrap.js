@@ -14,10 +14,16 @@ var wrap = function wrap(promise) {
     promise.then(function (res) {
       return resolve(res.data);
     }).catch(function (err) {
-      return reject({
-        error: err.response.data.error,
-        status: err.response.status
-      });
+      if (err && err.response && err.response.data) {
+        reject({
+          error: err.response.data.error,
+          status: err.response.status
+        });
+      } else {
+        reject({
+          error: err
+        });
+      }
     });
   });
 };
