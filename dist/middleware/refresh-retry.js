@@ -19,10 +19,11 @@ function _default(onExpire, api) {
       var headers = response.config.headers;
 
       if (response.status === 401 && headers.Authorization) {
-        var newToken = await onExpire();
-        response.config.headers.Authorization = "Bearer ".concat(newToken);
-        api.defaults.headers.Authorization = "Bearer ".concat(newToken);
-        api.request(response.config).then(function (res) {
+        onExpire().then(function (newToken) {
+          response.config.headers.Authorization = "Bearer ".concat(newToken);
+          api.defaults.headers.Authorization = "Bearer ".concat(newToken);
+          return api.request(response.config);
+        }).then(function (res) {
           return resolve(res);
         }).catch(function (_) {
           return reject(err);
