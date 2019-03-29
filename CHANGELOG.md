@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.6] - 2019-03-29
+
+### Changed
+
+- Added `off` function for channel object returned after joining a station. Allows to remove event listeners bound to `on` function
+
+### Fixed
+
+- Fixed import for phoenix channels socket
+
 ## [0.2.5] - 2019-03-27
 
 ### Fixed
