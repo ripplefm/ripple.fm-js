@@ -20,9 +20,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Socket;
 
 if (typeof window === 'undefined') {
-  Socket = require('phoenix-channels');
+  Socket = require('phoenix-channels').Socket;
 } else {
-  Socket = require('phoenix');
+  Socket = require('phoenix').Socket;
 }
 
 function _default(api) {
@@ -79,9 +79,8 @@ function _default(api) {
           return resolve({
             on: channel.on.bind(channel),
             push: channel.push.bind(channel),
-            leave: function leave() {
-              return channel.leave;
-            },
+            off: channel.off.bind(channel),
+            leave: channel.leave.bind(channel),
             channel: channel,
             socket: socket
           });
